@@ -7,7 +7,6 @@ import {
   OneToMany,
 } from 'typeorm';
 import { Post } from '../../post/entities/post.entity';
-import { Images } from '../../images/entities/image.entity';
 
 @Entity('Category')
 export class Category {
@@ -28,9 +27,6 @@ export class Category {
 
   @OneToMany(() => Post, (post) => post.category)
   posts: Post[];
-
-  @OneToMany(() => Images, (image) => image.category)
-  images: Images[];
 
   @CreateDateColumn()
   createdAt: Date;

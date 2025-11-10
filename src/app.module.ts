@@ -3,19 +3,20 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './modules/user/user.module';
 import { CategoryModule } from './modules/category/category.module';
 import { PostModule } from './modules/post/post.module';
-import { ImagesModule } from './modules/images/images.module';
+import { ImagesModule } from './modules/image/images.module';
 import { TagModule } from './modules/tag/tag.module';
-import { LinksModule } from './modules/links/links.module';
+import { LinksModule } from './modules/link/links.module';
 import { CommentsModule } from './modules/comments/comments.module';
 import { ConfigModule } from './modules/config/config.module';
 import { User } from './modules/user/entities/user.entity';
 import { Category } from './modules/category/entities/category.entity';
 import { Post } from './modules/post/entities/post.entity';
-import { Images } from './modules/images/entities/image.entity';
+import { Images } from './modules/image/entities/image.entity';
 import { Tags } from './modules/tag/entities/tag.entity';
-import { Links } from './modules/links/entities/link.entity';
+import { Links } from './modules/link/entities/link.entity';
 import { Comments } from './modules/comments/entities/comment.entity';
 import { Config } from './modules/config/entities/config.entity';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { Config } from './modules/config/entities/config.entity';
     LinksModule,
     CommentsModule,
     ConfigModule,
+    UsersModule,
   ],
 })
 export class AppModule {}

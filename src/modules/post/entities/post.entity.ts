@@ -6,13 +6,11 @@ import {
   UpdateDateColumn,
   ManyToOne,
   ManyToMany,
-  OneToMany,
   JoinTable,
 } from 'typeorm';
 import { User } from '../../user/entities/user.entity';
 import { Category } from '../../category/entities/category.entity';
 import { Tags } from '../../tag/entities/tag.entity';
-import { Comments } from '../../comments/entities/comment.entity';
 
 @Entity('Post')
 export class Post {
@@ -49,9 +47,6 @@ export class Post {
   @ManyToMany(() => Tags, (tag) => tag.posts)
   @JoinTable()
   tags: Tags[];
-
-  @OneToMany(() => Comments, (comment) => comment.post)
-  comments: Comments[];
 
   @Column({ default: 0 })
   views: number;
