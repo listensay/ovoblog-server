@@ -7,6 +7,7 @@ import {
   OneToMany,
 } from 'typeorm';
 import { Post } from '../../post/entities/post.entity';
+import { Comments } from '../../comment/entities/comment.entity';
 
 @Entity('User')
 export class User {
@@ -33,6 +34,9 @@ export class User {
 
   @OneToMany(() => Post, (post) => post.author)
   posts: Post[];
+
+  @OneToMany(() => Comments, (comment) => comment.user)
+  comments: Comments[];
 
   @CreateDateColumn()
   createdAt: Date;
